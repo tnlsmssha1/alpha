@@ -4,13 +4,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>home.jsp</title>
+<title>Home</title>
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="stylesheet" href="/css/cube.css">
 <style type="text/css">
 nav{
-	width: 100%
+	position:fixed;
+	top: 0px;
+	left: 0px;
 	
+	width: 100%;
+	height: 90px;
+	background: orange;
 }
 .menu{
 	display: flex;
@@ -66,6 +71,7 @@ nav{
 }
 
 .sub-menu-item:hover > a {
+	font-size: 1.4em;
 	background: rgb(216,160,41);
 }
 
@@ -97,13 +103,13 @@ window.onload=function(){
 	<li style="padding: 0px 20px;">
 		<section class="perspective">
 			<article class="cube">
-				<div class="base">Alpha</div>
-				<div class="base front">A</div>
-				<div class="base back">B</div>
-				<div class="base left">C</div>
-				<div class="base right">D</div>
-				<div class="base top">E</div>
-				<div class="base bottom">F</div>
+				<div class="base"></div>
+				<div class="base front"></div>
+				<div class="base back"></div>
+				<div class="base left"></div>
+				<div class="base right"></div>
+				<div class="base top"></div>
+				<div class="base bottom"></div>
 			</article>
 		</section>		
 	</li>

@@ -10,9 +10,12 @@
 	display: inline-block;
 	
 	transform-style: preserve-3d;
-	animation: rotate 3s infinite linear;
-	
 }
+
+.cube:hover{
+	animation: rotate 3s infinite linear;
+}
+
 .base{
 /* 	border: 10px solid red; */
 	width: 50px;

@@ -7,15 +7,17 @@
 <meta charset="UTF-8">
 <title>fill.jsp</title>
 <style type="text/css">
-#surface, #surface2{
+#surface{
  	border-collapse: collapse;
 	font-family: monospace;
-  	background: url('/media/alpha.png');
- 	background-repeat: round; 
- 	border: 5px solid red;
+ 	border: 1px solid red;
 }
 #surface td{
-	opacity: 0.5
+	opacity: 1
+}
+
+#parent_btn{
+	text-align: center;
 }
 </style>
 <script type="text/javascript">
@@ -59,54 +61,41 @@ function startBtn_click(e){
 }
 function clearBtn_click(e){
 	console.log("clear...")
-// 	for(let i=0;i<surface.rows.length;i++){
-// 		for(let j=0;j<surface.rows[i].cells.length;j++){
-// 			surface.rows[i].cells[j].style.color='black';
-// 			surface.rows[i].cells[j].style.background='black';
-// 		}
-// 	}
 	
-// 	for(let row of surface.rows){
-// 		for(let td of row.cells){
-// 			td.style.color='black'
-// 			td.style.background='black'
-// 		}
-// 	}
-
-	Array.from(surface.rows).forEach(function(row) {
-		Array.from(row.cells).forEach(function(td) {
+	for(let row of surface.rows){
+		for(let td of row.cells){
 			td.style.color='black'
 			td.style.background='black'
-		})
-	})// 위 2개의 for문과 1개의 forEach문은 새롭게 찍어둔 alpha의 color, backgroud를 black으로 초기화 하는 코드
-	forCount.innerText =0;
-    count.innerText =0;
-    seconds.innerText=0; // 기존 측정된 값들을 0으로 초기화 함
+		}
+	}
+	forCount.innerText=0;
+    count.innerText=0;
+    seconds.innerText=0;
 }
 </script>
 </head>
 <body>
-<h1>Spring MVC + XMLHttpRequest</h1>
+<h1 align="center">Fill</h1>
 <hr>
+<div id="parent_btn">
 <button id="start" onclick="startBtn_click(event)">Start</button>
 <button id="clear" onclick="clearBtn_click(event)">Clear</button>
+</div>
 <hr>
-<table border="1" width="500">
+<table border="1" width="250">
 <thead>
 	<tr>
 		<th>forCount</th><th>count</th><th>seconds</th>
 	</tr>
 </thead>
 	<tr>
-		<td id="forCount" align="right">0</td>
-		<td id="count"    align="right">0</td>
-		<td id="seconds"  align="right">0</td>
+		<td id="forCount" align="center">0</td>
+		<td id="count"    align="center">0</td>
+		<td id="seconds"  align="center">0</td>
 	</tr>
 </table>
 <hr>
 <table id="surface" onmousedown="event.preventDefault();" oncontextmenu="event.preventDefault();">
-<!-- 함수가 아닌 태그 안에 이벤트가 들어갈 경우 e가 아닌 event로 작성해야 인식 함 -->
-<!-- onmousedown은 오른쪽클릭으로 하는 드래그를 불가하게끔, oncontextmenu는 오른쪽 클릭을 했을 때 나오는 메뉴를 나오지 않게 함 -->
 	<tbody>
 	<c:forEach var="row" items="${surface}">
 		<tr>
@@ -116,19 +105,6 @@ function clearBtn_click(e){
 		</tr>
 	</c:forEach>
 	</tbody>
-</table>
-<hr>
-<table id="surface2"> <!-- surface의 테이블과 같지만 향상된 forEach와 기존 forEach 의 차이이다-->
-	<tbody>
-		<c:forEach var="i" begin="0" end="19">
-		<tr>
-			<c:forEach var="j" begin="0" end="39">
-			<c:set var="alpha" value="${surface[i][j]}"/>
-				<td style="color: ${alpha.fg}; background:${alpha.bg}">${alpha.ch}</td>
-			</c:forEach>
-		</tr>
-		</c:forEach>
-	</tbody>	
 </table>
 </body>
 </html>
