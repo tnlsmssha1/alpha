@@ -16,9 +16,9 @@
 	opacity: 1
 }
 
-#parent_btn{
-	text-align: center;
-}
+/* #parent_btn{ */
+/* 	text-align: center; */
+/* } */
 </style>
 <script type="text/javascript">
 function startBtn_click(e){
@@ -77,6 +77,15 @@ function clearBtn_click(e){
 <body>
 <h1 align="center">Fill[김현민]</h1>
 <hr>
+<form action="http://localhost:8080/alpha/fill">
+<label for="setL">Line:</label>
+<input id="setL" name="setline" type="number" min="1" max="100">
+<label for="setC">Column:</label>
+<input id="setC" name="setcolumn" type="number" min="1" max="100">
+<label for="setcount">Count:</label>
+<input id="setcount" name="setcount" type="text">
+<input type="submit" value="확인">
+</form>
 <div id="parent_btn">
 <button id="start" onclick="startBtn_click(event)">Start</button>
 <button id="clear" onclick="clearBtn_click(event)">Clear</button>
@@ -104,6 +113,14 @@ function clearBtn_click(e){
 		</c:forEach>
 		</tr>
 	</c:forEach>
+<%-- 	<c:forEach var="i" begin="1" end="${ }"> --%>
+<!-- 		<tr> -->
+<%-- 		<c:forEach var="j" begin="1" end="10"> --%>
+<%-- 		<c:set var="alpha" value="${surface[i][j]}" /> --%>
+<%-- 			<td style="color: ${alpha.fg}; background: ${alpha.bg}">${alpha.ch}</td> --%>
+<%-- 		</c:forEach> --%>
+<!-- 		</tr> -->
+<%-- 	</c:forEach> --%>
 	</tbody>
 </table>
 </body>
