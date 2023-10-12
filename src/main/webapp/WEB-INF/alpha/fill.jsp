@@ -12,9 +12,6 @@
 	font-family: monospace;
  	border: 1px solid red;
 }
-#surface td{
-	opacity: 1
-}
 
 /* #parent_btn{ */
 /* 	text-align: center; */
@@ -32,7 +29,7 @@ function startBtn_click(e){
 	
 	let tid=setInterval(function() {
 		forCount.innerText=++forCount.innerText;//Interval이 실행 될 때마다 forcount가 증가하면서 테이블에 있는 forcount의 수가 증가함
-		
+		//document.querySelector('#setL').value setL에 있는 값을 불러 올 수 있음
 		if(count.innerText==800){ // count가 800이 되는 순간 진행중이던 Interval이 종료되는 코드
 			clearInterval(tid);// alpha를 찍어내던 Interval이 종료됨
 			clearInterval(stid);// seconds의 Interval이 종료됨
@@ -77,13 +74,13 @@ function clearBtn_click(e){
 <body>
 <h1 align="center">Fill[김현민]</h1>
 <hr>
-<form action="http://localhost:8080/alpha/fill">
+<form id="setTable" action="http://localhost:8080/alpha/fill">
 <label for="setL">Line:</label>
-<input id="setL" name="setline" type="number" min="1" max="100">
+<input id="setL" name="setline" type="number" min="1" max="100" value="${param.setline}">
 <label for="setC">Column:</label>
-<input id="setC" name="setcolumn" type="number" min="1" max="100">
+<input id="setC" name="setcolumn" type="number" min="1" max="100" value="${param.setcolumn}">
 <label for="setcount">Count:</label>
-<input id="setcount" name="setcount" type="text">
+<input id="setcount" name="setcount" type="number" value="${param.setcount}">
 <input type="submit" value="확인">
 </form>
 <div id="parent_btn">
@@ -106,21 +103,14 @@ function clearBtn_click(e){
 <hr>
 <table id="surface" onmousedown="event.preventDefault();" oncontextmenu="event.preventDefault();">
 	<tbody>
-	<c:forEach var="row" items="${surface}">
+	<c:forEach var="i" begin="1" end="${param.setline}">
 		<tr>
-		<c:forEach var="alpha" items="${row}">
+		<c:forEach var="j" begin="1" end="${param.setcolumn}">
+		<c:set var="alpha" value="${surface[i][j]}" />
 			<td style="color: ${alpha.fg}; background: ${alpha.bg}">${alpha.ch}</td>
 		</c:forEach>
 		</tr>
 	</c:forEach>
-<%-- 	<c:forEach var="i" begin="1" end="${ }"> --%>
-<!-- 		<tr> -->
-<%-- 		<c:forEach var="j" begin="1" end="10"> --%>
-<%-- 		<c:set var="alpha" value="${surface[i][j]}" /> --%>
-<%-- 			<td style="color: ${alpha.fg}; background: ${alpha.bg}">${alpha.ch}</td> --%>
-<%-- 		</c:forEach> --%>
-<!-- 		</tr> -->
-<%-- 	</c:forEach> --%>
 	</tbody>
 </table>
 </body>

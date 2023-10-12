@@ -25,7 +25,7 @@ public class AlphaController {
 	void fill(Model model) {
 		log.info("fill()...");
 		
-		Alpha[][] alphas = new Alpha[20][40];
+		Alpha[][] alphas = new Alpha[100][100];
 		for(var i=0; i<alphas.length; i++) {
 			for( var j=0; j<alphas[i].length; j++) {
 				alphas[i][j] = new Alpha();
