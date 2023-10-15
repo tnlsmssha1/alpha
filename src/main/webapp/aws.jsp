@@ -7,6 +7,36 @@
 <title>aws.jsp</title>
 </head>
 <body>
+<table>
+	<thead>
+		<tr>
+			<th style="width: 80px;"></th>
+			<th>옵션</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+			<select style="width: 80px;">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+			</select>
+			</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+	</tbody>
+</table>
 <ol>
 	<li><a target="_blank" href="http://54.180.83.200:8080/">김은비</a></li>
 	<li><a target="_blank" href="http://54.180.150.20:8080/">김현민</a></li>

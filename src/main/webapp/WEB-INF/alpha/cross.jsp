@@ -7,18 +7,12 @@
 <meta charset="UTF-8">
 <title>cross.jsp</title>
 <style type="text/css">
-body{
-/* 	background-image: url('/media/alpha.png'), url('/media/small.png')	 */
-}
 #surface{
 	border-collapse: collapse;
 	font-family: monospace;
-	font-size: 160%;
+	font-size: 120%;
 	
 /* 	border: 15px outset red; */
-}
-#surface td{
-	opacity: 0.8;
 }
 section > table{
 	float: left;
@@ -36,7 +30,6 @@ function sleep(millis){
 class Cross{
 	constructor(){
 		this.direction=parseInt(Math.random()*4);
-// 		this.direction=1
 		this.speed=Math.random()*300+10;
 	}
 	
@@ -94,7 +87,6 @@ class Cross{
 		}
 		
 		if(this.alpha.line==0||this.alpha.line==21||this.alpha.column==0||this.alpha.column==41){
-// 			surface2.rows[1].remove();
 			return false;
 		}
 		
@@ -102,12 +94,7 @@ class Cross{
 		return true;
 	}
 	
-	automode(){
-		
-	}
-	
 	async run(){
-// 		console.log("count="+this.count)
 		let response=await fetch('/alpha/data');
 		this.alpha=await response.json();
 		
@@ -129,37 +116,84 @@ window.onload= ()=>{
 	createBtn.onclick= ()=>{
 		madeAlpha.innerText=++madeAlpha.innerText;
 		let cross=new Cross();
-		if(autobox.checked){
-		}
 		cross.run();
-		
-		if(madeAlpha.innerText==1){
-			setInterval(function() {
-				sec.innerText=++sec.innerText;
-			}, 1000)
-		}
 	}
 }
 </script>
 </head>
 <body>
-<h1>async/await + class</h1>
-<hr>
+<h1 align="center">async/await + class</h1>
 <button id="createBtn">Create</button>
-<label for="autobox">AUTO</label>
-<input id="autobox" type="checkbox">
-<hr>
 <section>
-<table id="surface3" border="1" width="300">
+<table>
 	<thead>
 		<tr>
-			<th>madeAlpha</th><th>seconds</th>
+			<th>목록</th>
+			<th>옵션</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td id="madeAlpha" align="right">0</td>
-			<td id="sec" align="right">0</td>
+			<td>글자</td>
+			<td>
+				<select>
+					<c:forEach var="i" begin="0" end="25">
+						<option>A</option>
+					</c:forEach>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>색깔</td>
+			<td>
+				<select>
+					<c:forEach var="i" begin="0" end="7">
+						<option>A</option>
+					</c:forEach>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>배경색</td>
+			<td>
+				<select>
+					<c:forEach var="i" begin="0" end="7">
+						<option>A</option>
+					</c:forEach>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>속도</td>
+			<td>
+				<select>
+					<c:forEach var="i" begin="0" end="9">
+						<option>A</option>
+					</c:forEach>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>방향</td>
+			<td>
+				<select>
+					<c:forEach var="i" begin="0" end="4">
+						<option>A</option>
+					</c:forEach>
+				</select>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table id="surface3" border="1" width="120">
+	<thead>
+		<tr>
+			<th>madeAlpha</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td id="madeAlpha" align="center">0</td>
 		</tr>
 	</tbody>
 </table>

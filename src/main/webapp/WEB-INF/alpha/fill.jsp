@@ -55,6 +55,7 @@ function startBtn_click(e){
 			clearInterval(stid);
 			start.disabled=true;	
 			clear.disabled=false;
+			checkBtn.disabled=false;
 			return; 
 		}
 		
@@ -76,6 +77,7 @@ function startBtn_click(e){
 		xhr.send();
 	}, 10);
 }
+
 function clearBtn_click(e){
 	console.log("clear...")
 	
@@ -88,9 +90,23 @@ function clearBtn_click(e){
 	forCount.innerText=0;
     count.innerText=0;
     seconds.innerText=0;
+    $('#setL').attr('value','')
+    $('#setC').attr('value','')
+    $('#setcount').attr('value','')
 }
-function checkBtn_click(e){
-	console.log("check....")
+
+window.onload= () => {
+	if($('#setL').attr('value')==''&&$('#setC').attr('value')==''){
+		start.disabled=true;
+		clear.disabled=true;
+	}else{
+		start.disabled=false;
+		clear.disabled=false;
+		checkBtn.disabled=true;
+		setL.disabled=true
+		setC.disabled=true
+		setcount.disabled=true
+	}
 }
 </script>
 </head>
@@ -106,7 +122,7 @@ function checkBtn_click(e){
 		<label for="setcount">Count:</label>
 		<input id="setcount" name="setcount" type="number" value="${param.setcount}">
 <!-- 		onchange 속성을 사용해서 수정 가능여부 확인 필요 -->
-		<input type="submit" value="확인">
+		<button id="checkBtn" type="submit">제출</button>
 		<div id="parent_btn">
 			<button id="start" onclick="startBtn_click(event)">Start</button>
 			<button id="clear" onclick="clearBtn_click(event)">Clear</button>
