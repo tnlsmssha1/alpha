@@ -8,6 +8,9 @@
 <script type="text/javascript" src="/webjars/jquery/jquery.js"></script>
 <title>fill.jsp</title>
 <style type="text/css">
+body{
+	height: 500px;
+}
 #surface{
  	border-collapse: collapse;
 	font-family: monospace;
