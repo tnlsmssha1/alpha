@@ -58,6 +58,9 @@ class App extends React.Component{
 		for(;;){
 			this.state.ellipse++;
 			await sleep(1000);
+			if(this.state.count==800){
+				break;
+			}
 		}
 	}
 	btnCreate_click(e){

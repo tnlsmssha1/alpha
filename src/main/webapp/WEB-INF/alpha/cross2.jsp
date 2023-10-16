@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <script type="text/javascript" src="/webjars/jquery/jquery.js"></script>
-<title>cross.jsp</title>
+<title>cross2.jsp</title>
 <style type="text/css">
 section > table{
  	float: left; 
@@ -150,7 +150,7 @@ window.onload= ()=>{
 <h1 align="center">async/await + class[선수 만들기]</h1>
 <!-- <button id="createBtn">Create</button> -->
 <section>
-<form action="http://localhost:8080/alpha/cross">
+<form action="http://localhost:8080/alpha/cross2">
 <table id="makeAlpha" style="border: 1px solid black">
 	<thead>
 		<tr>
@@ -203,23 +203,23 @@ window.onload= ()=>{
 		<tr>
 			<td>속도</td>
 			<td>
-				<input name="speed" type="number" min="1" max="10">
+				<input name="speed" type="number" min="1" max="10" value="${param.speed}">
 			</td>
 		</tr>
 		<tr>
 			<td>방향</td>
 			<td>
 				<select name="direction">
-						<option>RIGHT</option>
-						<option>DOWN</option>
-						<option>LEFT</option>
-						<option>UP</option>
+						<option value="0">RIGHT0</option>
+						<option value="1">DOWN1</option>
+						<option value="2">LEFT2</option>
+						<option value="3">UP3</option>
 				</select>
 			</td>
 		</tr>
 		<tr>
 			<td style="border-top: 1px solid black;" colspan="2">
-				<button type="submit" id="createBtn">생성</button>
+				<button type="submit" id="createBtn" onsubmit="submitFunction(event)">생성</button>
 			</td>
 		</tr>
 	</tbody>

@@ -9,11 +9,8 @@
 /* 	border: 10px solid blue; */
 	display: inline-block;
 	
+	animation: rotate 5s infinite linear;
 	transform-style: preserve-3d;
-}
-
-.cube:hover{
-	animation: rotate 3s infinite linear;
 }
 
 .base{

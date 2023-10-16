@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.util.Alpha;
@@ -22,10 +23,10 @@ public class AlphaController {
 	
 	
 	@GetMapping("/fill")
-	void fill(Model model) {
-		log.info("fill()...");
-		
-		Alpha[][] alphas = new Alpha[100][100];
+	void fill(Model model, @RequestParam(required = false, defaultValue = "1") int setline,
+						   @RequestParam(required = false, defaultValue = "1") int setcolumn) {
+		System.out.println(setline+"/"+setcolumn);
+		Alpha[][] alphas = new Alpha[setline+1][setcolumn+1];
 		for(var i=0; i<alphas.length; i++) {
 			for( var j=0; j<alphas[i].length; j++) {
 				alphas[i][j] = new Alpha();
@@ -64,6 +65,18 @@ public class AlphaController {
 	
 	@GetMapping("/cross")
 	void cross(Model model) {
+		var alphas = new HashMap<Integer, ArrayList<Alpha>>();
+		
+		for(var i=0; i<20; i++) {
+			alphas.put(i, new ArrayList<Alpha>());
+			for(var j=0; j<40; j++) {
+				alphas.get(i).add(new Alpha());
+			}
+		}
+		model.addAttribute("surface", alphas);
+	}
+	@GetMapping("/cross2")
+	void cross1(Model model) {
 		var alphas = new HashMap<Integer, ArrayList<Alpha>>();
 		
 		for(var i=0; i<20; i++) {

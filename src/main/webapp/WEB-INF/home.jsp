@@ -15,7 +15,7 @@ nav{
 	
 	width: 100%;
 	height: 90px;
-	background: orange;
+	background: white;
 }
 .menu{
 	display: flex;
@@ -33,13 +33,15 @@ nav{
 .menu-item{
 /* 	min-width: 150px; 아래 코드와 같은 기능을 한다. */
 	width: 150px;
-	background: orange; 
+	background: white; 
 	flex-shrink: 0; 
 }
 .menu-item:hover > .menu-title{
-	text-shadow: 10px 10px 5px red;
+	font-size: 1.4em;
+	font-weight:900;
 }
 .menu-item:hover > .sub-menu{
+	border-radius: 25px;
 	background: rgb(255,188,43);
 	max-height: 300px;
 	
@@ -59,8 +61,6 @@ nav{
 	list-style: none;
 	padding-left: 0px;
 
-}
-.sub-menu-item{
 }
 .sub-menu-item>a{
 	text-decoration: none;
@@ -98,9 +98,11 @@ window.onload=function(){
 </script>
 </head>
 <body>
+
 <nav>
 <ul class="menu">
 	<li style="padding: 0px 20px;">
+	<a href="">
 		<section class="perspective">
 			<article class="cube">
 				<div class="base"></div>
@@ -111,7 +113,8 @@ window.onload=function(){
 				<div class="base top"></div>
 				<div class="base bottom"></div>
 			</article>
-		</section>		
+		</section>
+	</a>	
 	</li>
 	
 	<li class="menu-item">
@@ -168,7 +171,7 @@ window.onload=function(){
 	</li>
 </ul>
 </nav>
-<iframe src="/alpha/fill"
+<iframe 
 		name="content" 
 		width="100%"
 		scrolling="no"
