@@ -153,7 +153,7 @@ window.onload= ()=>{
 </script>
 </head>
 <body>
-<h1 align="center">async/await + class</h1>
+<h1 align="center">Alpha Maker</h1>
 <section>
 <form action="http://localhost:8080/alpha/cross2">
 <table id="makeAlpha" style="border: 1px solid black">
