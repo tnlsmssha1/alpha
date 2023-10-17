@@ -147,7 +147,7 @@ window.onload= ()=>{
 </script>
 </head>
 <body>
-<h1 align="center">async/await + class[선수 만들기]</h1>
+<h1 align="center">Alpha 생성기</h1>
 <!-- <button id="createBtn">Create</button> -->
 <section>
 <form action="http://localhost:8080/alpha/cross">
@@ -219,7 +219,7 @@ window.onload= ()=>{
 		</tr>
 		<tr>
 			<td style="border-top: 1px solid black;" colspan="2">
-				<button type="submit" id="createBtn">생성</button>
+				<button type="button" id="createBtn">생성</button>
 			</td>
 		</tr>
 	</tbody>

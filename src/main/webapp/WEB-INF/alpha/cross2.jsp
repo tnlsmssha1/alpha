@@ -139,6 +139,7 @@ class Cross{
 
 window.onload= ()=>{
 	createBtn.onclick= ()=>{
+// 		버튼 클릭 시 옵션 선택창을 비활성화 진행 이후 제이쿼리로 해당 옵션의 값을 가져와 alpha를 재설정해서 생성하는 방식으로 진행
 		madeAlpha.innerText=++madeAlpha.innerText;
 		let cross=new Cross();
 		cross.run();
@@ -219,7 +220,7 @@ window.onload= ()=>{
 		</tr>
 		<tr>
 			<td style="border-top: 1px solid black;" colspan="2">
-				<button type="submit" id="createBtn" onsubmit="submitFunction(event)">생성</button>
+				<button type="button" id="createBtn">생성</button>
 			</td>
 		</tr>
 	</tbody>
