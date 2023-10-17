@@ -33,8 +33,7 @@ nav{
 .menu-item{
 /* 	min-width: 150px; 아래 코드와 같은 기능을 한다. */
 	width: 150px;
-	background: white; 
-	flex-shrink: 0; 
+	flex-shrink: 0;
 }
 .menu-item:hover > .menu-title{
 	font-size: 1.4em;

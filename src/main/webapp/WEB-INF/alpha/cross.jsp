@@ -8,6 +8,9 @@
 <script type="text/javascript" src="/webjars/jquery/jquery.js"></script>
 <title>cross.jsp</title>
 <style type="text/css">
+body{
+ 	height: 2500px;
+}
 section > table{
  	float: left; 
  	margin: 10px; 
@@ -55,8 +58,8 @@ function sleep(millis){
 
 class Cross{
 	constructor(){
-		this.direction=parseInt(Math.random()*4);
-		this.speed=Math.random()*300+10;
+		this.direction=parseInt($('select[name=direction]').val());
+		this.speed=parseInt($('input[name=speed]').val())*100;
 	}
 	
 	show(){
@@ -126,6 +129,9 @@ class Cross{
 		
 		this.alpha.line=10;
 		this.alpha.column=20;
+		this.alpha.ch=$('select[name=alphaCh]').val();
+		this.alpha.fg=$('select[name=alphaFg]').val();
+		this.alpha.bg=$('select[name=alphaBg]').val();
 		
 		this.addCh();
 		this.show();
@@ -147,10 +153,9 @@ window.onload= ()=>{
 </script>
 </head>
 <body>
-<h1 align="center">Alpha 생성기</h1>
-<!-- <button id="createBtn">Create</button> -->
+<h1 align="center">async/await + class</h1>
 <section>
-<form action="http://localhost:8080/alpha/cross">
+<form action="http://localhost:8080/alpha/cross2">
 <table id="makeAlpha" style="border: 1px solid black">
 	<thead>
 		<tr>
@@ -203,17 +208,17 @@ window.onload= ()=>{
 		<tr>
 			<td>속도</td>
 			<td>
-				<input name="speed" type="number" min="1" max="10">
+				<input name="speed" type="number" min="1" max="10" value="${param.speed}">
 			</td>
 		</tr>
 		<tr>
 			<td>방향</td>
 			<td>
 				<select name="direction">
-						<option>RIGHT</option>
-						<option>DOWN</option>
-						<option>LEFT</option>
-						<option>UP</option>
+						<option value="0">RIGHT</option>
+						<option value="1">DOWN</option>
+						<option value="2">LEFT</option>
+						<option value="3">UP</option>
 				</select>
 			</td>
 		</tr>
