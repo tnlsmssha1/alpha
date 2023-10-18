@@ -44,7 +44,6 @@ section > #surface{
 <script type="text/javascript">
 
 function race(alpha) {
-	console.log("race()..." + alpha)
 	let speed = Math.random()*200 + 10;
 	let direction = 0; // 0 : right, 1: down, 2: left, 3: up
 	
@@ -69,7 +68,7 @@ function race(alpha) {
 	
 	tdNo.align 	 = 'right';
 	tdAlpha.align = 'right';
-	tdCount.align = 'right';
+	tdCount.align = 'center';
 	
 	tdNo.innerText = tr.parentElement.rows.length;
 
@@ -106,7 +105,6 @@ function race(alpha) {
 		
 		if (alpha.line==1 && alpha.column==1) {
 			direction = 0; // right
-			roundCount.innerText = ++roundCount.innerText;
 			tdCount.innerText = ++tdCount.innerText;
 		} else if (alpha.line==1 && alpha.column==40)
 			direction = 1; // down
@@ -118,19 +116,13 @@ function race(alpha) {
 		setTimeout(move, speed);
 	}, speed);
 	
-	count.innerText = ++count.innerText;
-	if (count.innerText == 1) {
-		setInterval(function() {
-			ellipse.innerText = ++ellipse.innerText;
-		}, 1000);
-	}
 }
 
 window.onload = function() {
 	
 	startBtn.onclick = async e => {
-		let response=fetch('/alpha/data')
-		let alpha=response.json();
+		let response=await fetch('/alpha/data')
+		let alpha=await response.json();
 		race(alpha);
 	}
 	
@@ -143,12 +135,12 @@ window.onload = function() {
 <fieldset>
 <legend>Race Setting</legend>
 	<label for="player">Player</label>
-	<input name="player" type="number" value="${param.player}">
+	<input name="player" type="number" min="1" value="${param.player}">
 	<label for="lap">Lap</label>
-	<input name="lap" type="number" value="${param.lap}">
-	<button id="startBtn">Start</button>
+	<input name="lap" type="number" min="1" value="${param.lap}">
 </fieldset>
 </form>
+	<button id="startBtn">Start</button>
 
 <section>
 <table id="stat" border="1">

@@ -115,8 +115,8 @@ function race(alpha) {
 window.onload = function() {
 	
 	startBtn.onclick = async e => {
-		let response=fetch('/alpha/data')
-		let alpha=response.json();
+		let response=await fetch('/alpha/data')
+		let alpha=await response.json();
 		race(alpha);
 	}
 // 	startBtn.onclick = e => {
