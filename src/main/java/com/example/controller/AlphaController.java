@@ -38,6 +38,18 @@ public class AlphaController {
 	}
 
 	@GetMapping("/race")
+	void race(Model model) {
+		
+		var alphas = new ArrayList<ArrayList<Alpha>>();
+		for(var i=0; i<20; i++) {
+			alphas.add(new ArrayList<Alpha>());
+			for (var j=0; j<40; j++) {
+				alphas.get(i).add(new Alpha());
+			}
+		}
+		model.addAttribute("surface", alphas);
+	}
+	@GetMapping("/race3")
 	void race3(Model model) {
 		
 		var alphas = new ArrayList<ArrayList<Alpha>>();

@@ -1,0 +1,24 @@
+
+.collapse{
+	border-collapse: collapse;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+body{
+	height: 3000px;
+}
+
+#surface{
+	position:relative;
+}
+
+#surface td{
+	position: absolute;
+	
+	transition: left 3s, top 3s, transform 1s;
+}
+
+#surface tr:last-child > td:last-child{
+	box-shadow: 5px 5px 5px;
+}

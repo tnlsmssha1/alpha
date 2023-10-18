@@ -7,26 +7,38 @@
 <meta charset="UTF-8">
 <title>race.jsp</title>
 <style type="text/css">
+#raceSetting{
+	display: inline-block;
+	position: relative;
+}
+
+#raceSetting input{
+	width: 30px;
+	text-align: right;
+}
+
 #surface {
 	border-collapse: collapse;
+	
 	font-family: monospace;
 	font-size: 1.5em;
-	background-color: red;
-	background-image: url('/img/BackgroundFront.png'), url('/img/BackgroundBack.png');
-	background-size: 100%;
+	
+	background-image: url('/img/잔디.jpg');
 	background-repeat: no-repeat;
+	
+/* 	position: absolute; */
 }
 
 #surface td {
-	opacity: 0.7;
+ 	opacity: 0.7; 
+}
+
+section > #surface{
+	margin: auto;
 }
 
 #startBtn {
 	padding: 5px 10px;
-}
-section > table {
-	float: left;
-	margin: 10px;
 }
 </style>
 <script type="text/javascript">
@@ -116,38 +128,30 @@ function race(alpha) {
 
 window.onload = function() {
 	
-	startBtn.onclick = e => {
-		fetch('/alpha/data')
-		.then(response => response.json())
-		.then(alpha => {
-			race(alpha);
-		});
+	startBtn.onclick = async e => {
+		let response=fetch('/alpha/data')
+		let alpha=response.json();
+		race(alpha);
 	}
 	
 }
 </script>
 </head>
 <body>
-<h1>Ajax => fetch 활용</h1>
-<button id="startBtn">Start</button>
-<hr>
-<table border="1" width="400">
-	<thead>
-		<tr>
-		<th>roundCount</th><th>count</th><th>ellipse</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-		<td id="roundCount" align="right">0</td>
-		<td id="count" align="right">0</td>
-		<td id="ellipse" align="right">0</td>
-		</tr>
-	</tbody>
-</table>
-<hr>
+<h1 align="center">Race</h1>
+<form id="raceSetting" action="http://localhost:8080/alpha/race">
+<fieldset>
+<legend>Race Setting</legend>
+	<label for="player">Player</label>
+	<input name="player" type="number" value="${param.player}">
+	<label for="lap">Lap</label>
+	<input name="lap" type="number" value="${param.lap}">
+	<button id="startBtn">Start</button>
+</fieldset>
+</form>
+
 <section>
-<table id="stat" width="400" border="1">
+<table id="stat" border="1">
 	<thead>
 		<tr>
 			<th>no</th><th>alpha</th><th>Round Count</th>

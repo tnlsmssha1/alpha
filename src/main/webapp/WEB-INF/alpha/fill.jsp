@@ -9,7 +9,7 @@
 <title>fill.jsp</title>
 <style type="text/css">
 body{
-	height: 500px;
+	height: 2000px;
 }
 #surface{
  	border-collapse: collapse;
@@ -119,9 +119,9 @@ window.onload= () => {
 	<fieldset>
 	<legend>Table Size&Count</legend>
 		<label for="setL">Line:</label>
-		<input id="setL" name="setline" type="number" min="1" max="100" value="${param.setline}">
+		<input id="setL" name="setline" type="number" min="1" max="50" value="${param.setline}">
 		<label for="setC">Column:</label>
-		<input id="setC" name="setcolumn" type="number" min="1" max="100" value="${param.setcolumn}">
+		<input id="setC" name="setcolumn" type="number" min="1" max="50" value="${param.setcolumn}">
 		<label for="setcount">Count:</label>
 		<input id="setcount" name="setcount" type="number" value="${param.setcount}">
 <!-- 		onchange 속성을 사용해서 수정 가능여부 확인 필요 -->
