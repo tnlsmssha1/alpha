@@ -143,7 +143,7 @@ window.onload=function(){
 		<ol class="sub-menu">
 			<li class="sub-menu-item"><a target="content" href="/fill.jsp">fill</a></li>
 			<li class="sub-menu-item"><a target="content" href="/sort.jsp">sort</a></li>
-			<li class="sub-menu-item"><a target="content" href="/race.jsp">race</a></li>
+			<li class="sub-menu-item"><a target="content" href="/move.jsp">move</a></li>
 		</ol>
 	</li>
 	

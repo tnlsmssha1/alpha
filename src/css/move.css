@@ -1,0 +1,20 @@
+
+.collapse{
+	border-collapse: collapse;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+body{
+	height: 1500px;
+}
+
+#surface{
+	position:relative;
+}
+
+#surface td{
+	position: relative;
+	
+	transition: left 3s, top 3s, transform 2s;
+}

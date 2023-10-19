@@ -15,8 +15,8 @@ public class Alpha {
 	protected char ch;
 	
 	public Alpha() {
-		line = (int)(Math.random()*50 + 1);
-		column = (int)(Math.random()*50 + 1);
+		line = (int)(Math.random()*20 + 1);
+		column = (int)(Math.random()*40 + 1);
 		
 		do {
 			fg = Color.values()[(int)(Math.random()*8)];
