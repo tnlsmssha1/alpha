@@ -142,7 +142,7 @@ window.onload=function(){
 		<div class="menu-title">React</div>
 		<ol class="sub-menu">
 			<li class="sub-menu-item"><a target="content" href="/fill.jsp">fill</a></li>
-			<li class="sub-menu-item"><a target="content" href="/cross.jsp">cross</a></li>
+			<li class="sub-menu-item"><a target="content" href="/sort.jsp">sort</a></li>
 			<li class="sub-menu-item"><a target="content" href="/race.jsp">race</a></li>
 		</ol>
 	</li>
