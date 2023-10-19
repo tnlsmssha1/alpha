@@ -5,6 +5,7 @@
 <html >
 <head>
 <meta charset="UTF-8">
+<script type="text/javascript" src="/webjars/jquery/jquery.js"></script>
 <title>race.jsp</title>
 <style type="text/css">
 #raceSetting{
@@ -45,7 +46,7 @@ section > #surface{
 
 function race(alpha) {
 	let speed = Math.random()*200 + 10;
-	let direction = 0; // 0 : right, 1: down, 2: left, 3: up
+	let direction = 0;
 	
 	alpha.line = 1;
 	alpha.column = 1;
@@ -55,6 +56,7 @@ function race(alpha) {
 	td.style.background = alpha.bg;
 	td.innerText = alpha.ch;
 	
+// 	테이블에 알파의 정보를 넣는 부분
 	let tr 		= document.createElement('tr');
 	let tdNo 		= document.createElement('td');
 	let tdAlpha 	= document.createElement('td');
@@ -67,7 +69,7 @@ function race(alpha) {
 	window.stat.tBodies[0].append(tr);
 	
 	tdNo.align 	 = 'right';
-	tdAlpha.align = 'right';
+	tdAlpha.align = 'center';
 	tdCount.align = 'center';
 	
 	tdNo.innerText = tr.parentElement.rows.length;
@@ -78,6 +80,7 @@ function race(alpha) {
 	
 	tdCount.innerText = 0;
 		
+	
 	setTimeout(function move() {
 		let td = surface.rows[alpha.line-1].cells[alpha.column-1];
 		td.style.color = 'black';
@@ -95,6 +98,10 @@ function race(alpha) {
 			break;
 		case 3:	// UP
 			alpha.line--;
+			break;
+		case 4:	// STOP
+			alpha.line = 1;
+			alpha.column = 1;
 			break;
 		}
 
@@ -121,9 +128,12 @@ function race(alpha) {
 window.onload = function() {
 	
 	startBtn.onclick = async e => {
-		let response=await fetch('/alpha/data')
-		let alpha=await response.json();
-		race(alpha);
+// 		console.log(parseInt($('input[name=player]').val()))
+		for(let i=0;i<parseInt($('input[name=player]').val());i++){
+			let response=await fetch('/alpha/data')
+			let alpha=await response.json();
+			race(alpha);
+		}
 	}
 	
 }
