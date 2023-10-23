@@ -43,9 +43,9 @@ body{
 }
 
 #stat{
-	position: relative;
+	position: absolute;
 	display: inline-block;
-	left: 280px;
+	left: 100px;
 }
 
 section > #surface{
@@ -152,7 +152,6 @@ class Race{
 				console.log(this.id)
 				let stopSec=Date.now();
 				let finishSec=parseInt(stopSec-startSec)/1000;
-				
 				
 				let statTable = document.querySelector('#stat tbody');
 	            let row = document.createElement('tr');

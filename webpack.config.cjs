@@ -4,6 +4,8 @@ module.exports = {
         fill: "./src/fill.jsx",
         sort: "./src/sort.jsx",
         move: "./src/move.jsx",
+        ping: "./src/ping.jsx",
+        flow: "./src/flow.jsx",
     },
     output: {
         filename: "[name].js",

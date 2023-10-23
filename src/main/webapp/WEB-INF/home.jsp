@@ -91,9 +91,13 @@ function resize(){
 	iframe.style.height=getComputedStyle(iframe.contentDocument.documentElement).height
 }
 
-window.onload=function(){
+// window.onload=function(){
+// 	setInterval(resize, 100);
+// }
+
+$(document).ready(function() {
 	setInterval(resize, 100);
-}
+})
 </script>
 </head>
 <body>
@@ -104,7 +108,7 @@ window.onload=function(){
 	<a href="">
 		<section class="perspective">
 			<article class="cube">
-				<div class="base"></div>
+				<div class="base">Home</div>
 				<div class="base front"></div>
 				<div class="base back"></div>
 				<div class="base left"></div>
@@ -144,6 +148,8 @@ window.onload=function(){
 			<li class="sub-menu-item"><a target="content" href="/fill.jsp">fill</a></li>
 			<li class="sub-menu-item"><a target="content" href="/sort.jsp">sort</a></li>
 			<li class="sub-menu-item"><a target="content" href="/move.jsp">move</a></li>
+			<li class="sub-menu-item"><a target="content" href="/ping.jsp">ping</a></li>
+			<li class="sub-menu-item"><a target="content" href="/flow.jsp">flow</a></li>
 		</ol>
 	</li>
 	
