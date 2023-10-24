@@ -34,6 +34,7 @@ eclipse {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2'
 	compileOnly 'org.projectlombok:lombok'
@@ -53,6 +54,11 @@ dependencies {
     implementation group: 'org.glassfish.web', name: 'jakarta.servlet.jsp.jstl'
     implementation group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '10.1.11'
 
+	/*
+     * Spring Security
+     */
+    implementation group: 'org.springframework.security', name: 'spring-security-taglibs', version: '6.0.3'
+	
 	/*
      * Webjars(client-side web libraries)
      */
