@@ -114,7 +114,7 @@ window.onload= () => {
 </script>
 </head>
 <body>
-<h1 align="center">Table Maker[김현민]</h1>
+<h1 align="center">Table Maker</h1>
 <form id="setTable" action="http://localhost:8080/alpha/fill">
 	<fieldset>
 	<legend>Table Size&Count</legend>
