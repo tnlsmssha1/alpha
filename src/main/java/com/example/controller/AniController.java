@@ -29,8 +29,8 @@ public class AniController {
 		for(var i=0; i<alphas.length; i++) {
 			for( var j=0; j<alphas[i].length; j++) {
 				alphas[i][j] = new Alpha();
-				alphas[i][j].setFg(Color.Black);
-				alphas[i][j].setBg(Color.Black);
+//				alphas[i][j].setFg(Color.Black);
+//				alphas[i][j].setBg(Color.Black);
 			}
 		}
 		model.addAttribute("surface", alphas); //Model 검색해보기
