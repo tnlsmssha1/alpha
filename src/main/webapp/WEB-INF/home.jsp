@@ -123,11 +123,10 @@ $(document).ready(function() {
 	<li class="menu-item">
 		<div class="menu-title">Alpha</div>
 		<ol class="sub-menu">
-			<li class="sub-menu-item"><a target="content" href="/alpha/fill">fill</a></li>
-			<li class="sub-menu-item"><a target="content" href="/alpha/cross">cross</a></li>
-			<li class="sub-menu-item"><a target="content" href="/alpha/race">race</a></li>
-			<li class="sub-menu-item"><a target="content" href="/alpha/zigzag">zigzag</a></li>
-			<li class="sub-menu-item"><a target="content" href="#">earthworm</a></li>
+			<li class="sub-menu-item"><a target="content" href="/alpha/fill">Table Maker</a></li>
+			<li class="sub-menu-item"><a target="content" href="/alpha/cross">Alpha Maker</a></li>
+			<li class="sub-menu-item"><a target="content" href="/alpha/race">Race</a></li>
+			<li class="sub-menu-item"><a target="content" href="/alpha/zigzag">Worms</a></li>
 		</ol>
 	</li>
 	

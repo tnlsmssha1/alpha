@@ -1,15 +1,22 @@
 
+h1{
+	text-align: center;
+}
 
 #surface {
+	margin: auto;
 	border-collapse: collapse;
 	font-family: monospace;
 	font-size: 1.5em;
-	box-shadow: 30px 30px 50px black;
 }
 
-body {
-/*	background-image: url('/img/BackgroundFront.png'), url('/img/BackgroundBack.png');*/
-/*	background-size: 100%;*/
-/*	background-repeat: no-repeat, repeat;*/
-	background-position: top, bottom;
+#surface td:visited{
+	background-color: black;
+	color: black;
+}
+
+#btnCreate{
+	margin: auto;
+	margin-bottom: 20px;
+	display: block;
 }

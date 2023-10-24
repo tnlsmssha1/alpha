@@ -13,9 +13,6 @@ window.onload = () => {
 	let btnCreate = document.querySelector('#btnCreate');
 	
 	btnCreate.onclick =  e => {
-//		let response = await fetch('/alpha/data');
-//		let alpha = await response.json();
-		
 		let zigzag = new ZigZag();
 		zigzag.run();
 	}

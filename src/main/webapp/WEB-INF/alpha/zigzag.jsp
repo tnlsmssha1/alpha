@@ -5,15 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script type="text/javascript" src="/webjars/jquery/jquery.js"></script>
 <title>zigzag.jsp</title>
 <link rel="stylesheet" href="/css/zigzag.css">
 <script type="text/javascript" src="/js/zigzag.js"></script>
 </head>
 <body>
-<h1>zigzag</h1>
-<hr>
+<h1>Worms</h1>
 <button id="btnCreate">Create</button>
-<hr>
 <table id="surface">
 	<tbody>
 	<c:forEach var="list" items="${surface}">
