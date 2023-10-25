@@ -5,38 +5,70 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script type="text/javascript" src="/webjars/jquery/jquery.js"></script>
 <title>cross.jsp</title>
 <style type="text/css">
 body{
-/* 	background-image: url('/media/alpha.png'), url('/media/small.png')	 */
-}
-#surface{
-	border-collapse: collapse;
-	font-family: monospace;
-	font-size: 160%;
-	
-	border: 15px outset red;
-}
-#surface td{
-	opacity: 0.8;
+ 	height: 2500px;
 }
 section > table{
-	float: left;
-	margin: 10px;
+ 	float: left; 
+ 	margin: 10px; 
+}
+select{
+	width: 100px;
+}
+#surface2, #surface3, #makeAlpha{
+	position: absolute;
+ 	border-collapse: collapse;
+ 	width: 160px;
+}
+#makeAlpha{
+	text-align: center;
+}
+#makeAlpha input{
+	width: 93px;
+}
+#surface3{
+	top: 280px;
+	left: 0px;
+}
+#surface2{
+	top: 350px;
+	left: 0px;
+}
+#surface{
+	margin: auto;
+	border-collapse: collapse;
+	font-family: monospace;
+	font-size: 120%;
+}
+
+#createBtn{
+	display: block;
+	margin: auto;
+}
+
+@keyframes rotate{
+	form{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
 }
 </style>
 <script type="text/javascript">
 function sleep(millis){
 	return new Promise(function(resolve, reject) {
 		setTimeout(resolve, millis);
-		
 	});
 }
 
 class Cross{
 	constructor(){
-		this.direction=parseInt(Math.random()*4);
-		this.speed=Math.random()*300+10;
+		this.direction=parseInt($('select[name=direction]').val());
+		this.speed=parseInt($('input[name=speed]').val())*100;
 	}
 	
 	show(){
@@ -44,13 +76,15 @@ class Cross{
 		td.style.color=this.alpha.fg;
 		td.style.background=this.alpha.bg;
 		td.innerText=this.alpha.ch;
+		td.style.animation='rotate 0.5s linear infinite';
 	}
 	
 	hide(){
 		let td=surface.rows[this.alpha.line-1].cells[this.alpha.column-1];
-		td.style.color='black';
-		td.style.background='black';
+		td.style.color='white';
+		td.style.background='white';
 		td.innerText=this.alpha.ch;
+// 		td.style.animation='none';
 	}
 	
 	addCh(){
@@ -62,7 +96,7 @@ class Cross{
 		tr.append(tdCh);
 		surface2.tBodies[0].append(tr);
 		
-		tdNo.innerText=surface2.tBodies[0].rows.length;
+		tdNo.innerText=madeAlpha.innerText;
 		tdCh.innerText=this.alpha.ch;
 		
 		
@@ -70,6 +104,8 @@ class Cross{
 		tdNo.align='center'
 		tdCh.style.color=this.alpha.fg;
 		tdCh.style.background=this.alpha.bg;
+		
+		
 	}
 	
 	move(){
@@ -99,15 +135,17 @@ class Cross{
 	}
 	
 	async run(){
-// 		console.log("count="+this.count)
 		let response=await fetch('/alpha/data');
 		this.alpha=await response.json();
+		
 		this.alpha.line=10;
 		this.alpha.column=20;
+		this.alpha.ch=$('select[name=alphaCh]').val();
+		this.alpha.fg=$('select[name=alphaFg]').val();
+		this.alpha.bg=$('select[name=alphaBg]').val();
 		
 		this.addCh();
 		this.show();
-		
 		for(;;){
 			await sleep(this.speed);
 			if(!this.move())
@@ -117,45 +155,106 @@ class Cross{
 }
 
 window.onload= ()=>{
-	
 	createBtn.onclick= ()=>{
-		madealpha.innerText=++madealpha.innerText;
+		madeAlpha.innerText=++madeAlpha.innerText;
 		let cross=new Cross();
-		if(autobox.checked){
-		}
 		cross.run();
-		
-		if(madealpha.innerText==1){
-			setInterval(function() {
-				sec.innerText=++sec.innerText;
-			}, 1000)
-		}
-		
 	}
 }
 </script>
 </head>
 <body>
-<h1>async/await + class</h1>
-<hr>
-<button id="createBtn">Create</button>
-<label for="autobox">AUTO</label>
-<input id="autobox" type="checkbox">
-<hr>
+<h1 align="center">Alpha Maker</h1>
 <section>
-<table id="surface3" border="1" width="300">
+<form action="http://localhost:8080/alpha/cross2">
+<table id="makeAlpha" style="border: 1px solid black">
 	<thead>
 		<tr>
-			<th>madeAlpha</th><th>seconds</th>
+			<th>목록</th>
+			<th>옵션</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td id="madealpha" align="right">0</td><td id="sec" align="right">0</td>
+			<td>글자</td>
+			<td>
+				<select name="alphaCh">
+					<c:forEach var="i" begin="0" end="25">
+					<c:set var="ch" value="<%=\"\"+(char)('A'+(Integer)(pageContext.getAttribute(\"i\")))%>" />
+						<option>${ch}</option>
+					</c:forEach>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>색깔</td>
+			<td>
+				<select name="alphaFg">
+					<option>Black</option>
+					<option>Red</option>
+					<option>Green</option>
+					<option>Yellow</option>
+					<option>Blue</option>
+					<option>Magenta</option>
+					<option>Cyan</option>
+					<option>White</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>배경색</td>
+			<td>
+				<select name="alphaBg">
+					<option>Black</option>
+					<option>Red</option>
+					<option>Green</option>
+					<option>Yellow</option>
+					<option>Blue</option>
+					<option>Magenta</option>
+					<option>Cyan</option>
+					<option>White</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>속도</td>
+			<td>
+				<input name="speed" type="number" min="1" max="10" value="${param.speed}">
+			</td>
+		</tr>
+		<tr>
+			<td>방향</td>
+			<td>
+				<select name="direction">
+						<option value="0">RIGHT</option>
+						<option value="1">DOWN</option>
+						<option value="2">LEFT</option>
+						<option value="3">UP</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-top: 1px solid black;" colspan="2">
+				<button type="button" id="createBtn">생성</button>
+			</td>
 		</tr>
 	</tbody>
 </table>
-<table id="surface2" border="1" width="100">
+</form>
+
+<table id="surface3" border="1">
+	<thead>
+		<tr>
+			<th>madeAlpha</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td id="madeAlpha" align="center">0</td>
+		</tr>
+	</tbody>
+</table>
+<table id="surface2" border="1">
 	<thead>
 		<tr>
 			<th>no</th><th>ch</th>
@@ -165,12 +264,14 @@ window.onload= ()=>{
 	</tbody>
 </table>
 </section>
+
+
 <table id="surface" onmousedown="event.preventDefault();" oncontextmenu="event.preventDefault();">
 	<tbody>
 		<c:forEach var="i" begin="0" end="${surface.size()-1}">
 		<tr>
 			<c:forEach var="alpha" items="${surface[i]}">
-				<td style="color: black; background: black">${alpha.ch}</td>
+				<td style="color: white; background: white">${alpha.ch}</td>
 			</c:forEach>
 		</tr>
 		</c:forEach>

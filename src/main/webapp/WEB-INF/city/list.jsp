@@ -8,11 +8,8 @@
 <meta charset="UTF-8">
 <title>list3.jsp</title>
 <style type="text/css">
-tbody>tr:nth-child(2n){
-	background: red;
-}
-tbody>tr:nth-child(2n+1){
-	background: blue;
+form input {
+	margin-top: 10px;
 }
 </style>
 <script type="text/javascript">
