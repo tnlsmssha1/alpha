@@ -29,6 +29,11 @@ public class RestDeptController {
 	@Autowired
 	DeptMapper mapper;
 	
+	@GetMapping(headers = {"Accept=text/html"})
+	void view() {
+		
+	}
+	
 	@GetMapping
 	@ResponseBody
 	ResponseEntity<Object> get(){

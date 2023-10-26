@@ -44,8 +44,7 @@ body{
 
 #stat{
 	position: absolute;
-	display: inline-block;
-	left: 100px;
+	left: 120px;
 }
 
 section > #surface{
@@ -61,8 +60,8 @@ function sleep(millis){
 }
 
 class Race{
-	constructor(id){
-		this.id=id;
+	constructor(){
+		
 		this.speed = Math.random()*200+10;
 		this.direction = 0;
 		this.round=0;
@@ -149,7 +148,6 @@ class Race{
 			await sleep(this.speed);
 			this.move()
 			if($('input[name=lap]').val()==this.round){
-				console.log(this.id)
 				let stopSec=Date.now();
 				let finishSec=parseInt(stopSec-startSec)/1000;
 				
