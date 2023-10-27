@@ -37,7 +37,6 @@ public class RestDeptController {
 	@GetMapping
 	@ResponseBody
 	ResponseEntity<Object> get(){
-		System.out.println("get()...");
 		var list=mapper.selectAll();
 		var body= new HashMap<String, Object>();
 		body.put("result","sucess");

@@ -5,6 +5,9 @@ import { sprintf } from "sprintf-js";
 import sleep from "es7-sleep"
 import List from "./List.jsx"
 import"./App.css"
+import Insert from "./Insert.jsx";
+import Update from "./Update.jsx";
+import Delete from "./Delete.jsx";
 
 
 class App extends React.Component{
@@ -13,6 +16,9 @@ class App extends React.Component{
 		return(
 			<Routes>
 				<Route path="/rest/dept" element={<List/>}/>
+				<Route path="/rest/dept/insert" element={<Insert/>}/>
+				<Route path="/rest/dept/update" element={<Update/>}/>
+				<Route path="/rest/dept/delete" element={<Delete/>}/>
 			</Routes>
 		)
 	}

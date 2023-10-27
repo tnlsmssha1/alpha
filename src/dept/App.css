@@ -13,3 +13,18 @@ table th{
 table td{
 	padding: 20px;
 }
+
+form{
+	width: 300px;
+	margin: auto;
+	text-align: center;
+}
+fieldset{
+	padding: 10px;
+	margin: 20px;
+}
+input{
+	padding: 10px;
+	width: 200px;
+	text-align: center;
+}
