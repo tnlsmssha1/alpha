@@ -1,10 +1,24 @@
-
+h1{
+	text-align: center;
+}
 .collapse{
+	margin:auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	border-collapse: collapse;
 	font-family: monospace;
 	font-size: 1.2em;
 }
-
+div +table{
+	margin: auto;
+	z-index: 1;
+}
+div button{
+	display: flex;
+	margin:auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
 body{
 	height: 3000px;
 }

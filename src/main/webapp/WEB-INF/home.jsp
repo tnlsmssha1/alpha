@@ -107,21 +107,21 @@ $(document).ready(function() {
 
 <nav>
 <ul class="menu">
-	<li style="padding: 0px 20px;">
-	<a href="">
-		<section class="perspective">
-			<article class="cube">
-				<div class="base">Home</div>
-				<div class="base front"></div>
-				<div class="base back"></div>
-				<div class="base left"></div>
-				<div class="base right"></div>
-				<div class="base top"></div>
-				<div class="base bottom"></div>
-			</article>
-		</section>
-	</a>	
-	</li>
+<!-- 	<li style="padding: 0px 20px;"> -->
+<!-- 	<a href=""> -->
+<%-- 		<section class="perspective"> --%>
+<!-- 			<article class="cube"> -->
+<!-- 				<div class="base">Home</div> -->
+<!-- 				<div class="base front"></div> -->
+<!-- 				<div class="base back"></div> -->
+<!-- 				<div class="base left"></div> -->
+<!-- 				<div class="base right"></div> -->
+<!-- 				<div class="base top"></div> -->
+<!-- 				<div class="base bottom"></div> -->
+<!-- 			</article> -->
+<%-- 		</section> --%>
+<!-- 	</a>	 -->
+<!-- 	</li> -->
 	
 	<li class="menu-item">
 		<div class="menu-title">Alpha</div>
@@ -136,8 +136,8 @@ $(document).ready(function() {
 	<li class="menu-item">
 		<div class="menu-title">Animation</div>
 		<ol class="sub-menu">
-			<li class="sub-menu-item"><a target="content" href="/ani/fill">fill</a></li>
-			<li class="sub-menu-item"><a target="content" href="/cube.jsp">cube</a></li>
+			<li class="sub-menu-item"><a target="content" href="/ani/fill">CURL</a></li>
+			<li class="sub-menu-item"><a target="content" href="/cube.jsp">CUBE</a></li>
 			<li class="sub-menu-item"><a target="content" href="/placeholder.jsp">placeholder</a></li>
 		</ol>
 	</li>
@@ -145,11 +145,11 @@ $(document).ready(function() {
 	<li class="menu-item">
 		<div class="menu-title">React</div>
 		<ol class="sub-menu">
-			<li class="sub-menu-item"><a target="content" href="/fill.jsp">fill</a></li>
-			<li class="sub-menu-item"><a target="content" href="/sort.jsp">sort</a></li>
-			<li class="sub-menu-item"><a target="content" href="/move.jsp">move</a></li>
-			<li class="sub-menu-item"><a target="content" href="/ping.jsp">ping</a></li>
-			<li class="sub-menu-item"><a target="content" href="/flow.jsp">flow</a></li>
+			<li class="sub-menu-item"><a target="content" href="/fill.jsp">FILL</a></li>
+			<li class="sub-menu-item"><a target="content" href="/sort.jsp">SORT</a></li>
+			<li class="sub-menu-item"><a target="content" href="/move.jsp">MOVE</a></li>
+			<li class="sub-menu-item"><a target="content" href="/ping.jsp">PING</a></li>
+			<li class="sub-menu-item"><a target="content" href="/flow.jsp">FLOW</a></li>
 			<li class="sub-menu-item"><a target="content" href="/rest/dept">dept</a></li>
 		</ol>
 	</li>
@@ -196,7 +196,7 @@ $(document).ready(function() {
 	</sec:authorize>
 </ul>
 </nav>
-<iframe 
+<iframe src="/cube.jsp"
 		name="content" 
 		width="100%"
 		scrolling="no"

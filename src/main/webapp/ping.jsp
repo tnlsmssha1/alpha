@@ -10,14 +10,12 @@
 <script type="module" src="/js/react/ping.js"></script>
 </head>
 <body>
-<h1>ping</h1>
-<hr>
+<h1>PING</h1>
 <table class="collapse">
 	<tbody>
 		<tr><td style="color: red; background: blue">A</td></tr>
 	</tbody>
 </table>
-<hr>
 <section id="root"></section>
 </body>
 </html>

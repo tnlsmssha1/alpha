@@ -1,4 +1,18 @@
-
+h1{
+	text-align: center;
+}
+button{
+	display: flex;
+	margin:auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+input{
+	display: flex;
+	margin:auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
 .collapse{
 	border-collapse: collapse;
 	font-family: monospace;
@@ -10,6 +24,7 @@ body{
 }
 
 #surface{
+	margin:auto;
 	position:relative;
 }
 

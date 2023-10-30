@@ -19,7 +19,7 @@ class Sort extends Alpha{
 	}
 	
 	init(){
-		this.left=700;
+		this.left=-200;
 		this.top=100;
 		this.scale=10;
 	}
@@ -141,11 +141,9 @@ class App extends React.Component{
 			<>
 			<button disabled={this.state.disabled}
 					onClick={(event)=>this.btnStart_click(event)}>Start</button>
-			<hr/>
 			<input name="sort" type="radio" onChange={()=>this.onSelect(1)} checked={this.sortNum==1}/>
 			<input name="sort" type="radio" onChange={()=>this.onSelect(2)} checked={this.sortNum==2}/>
 			<input name="sort" type="radio" onChange={()=>this.onSelect(3)} checked={this.sortNum==3}/>
-			<hr/>
 			<table id="surface"
 				   className="collapse"
 				   onMouseDown={event=>event.preventDefault()}

@@ -19,8 +19,8 @@ class Fill extends Alpha{
 	}
 	
 	init(){
-		this.left=parseInt(Math.random()*500+400);
-		this.top=100;
+		this.left=0;
+		this.top=parseInt(Math.random()*700);
 		this.zIndex=0;
 		this.scale=3;
 	}
@@ -101,11 +101,12 @@ class App extends React.Component{
 	render(){
 		return(
 			<>
+			<div>
 			<button disabled={this.state.disabled}
 					onClick={(event)=>this.btnCreate_click(event)}>
 			Start
 			</button>
-			<hr/>
+			</div>
 			<table width={200} border={1}>
 				<thead>
 				<tr>
@@ -122,7 +123,6 @@ class App extends React.Component{
 				</tr>	
 				</tbody>
 			</table>
-			<hr/>
 			<table id="surface"
 				   className="collapse"
 				   onMouseDown={event=>event.preventDefault()}

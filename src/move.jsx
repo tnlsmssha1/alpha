@@ -9,8 +9,8 @@ import "./css/move.css"
 
 
 class Move extends Alpha{
-	left=0;
-	top=0;
+	left=460;
+	top=30;
 	speedLeft=0;
 	speedTop=0;
 	speedRotate=0;
@@ -87,7 +87,6 @@ class App extends React.Component{
 					onClick={(event)=>this.btnStart_click(event)}>Start</button>
 			<button disabled={!this.state.disabled}
 					onClick={(event)=>this.btnStop_click(event)}>Stop</button>
-			<hr/>
 			<table id="surface"
 				   className="collapse"
 				   onMouseDown={event=>event.preventDefault()}

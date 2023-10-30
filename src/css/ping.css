@@ -1,8 +1,24 @@
-
-
+h1{
+	text-align: center;
+}
+button{
+	display: flex;
+	margin:auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
 .collapse {
 	border-collapse: collapse;
 	font-family: monospace;
+	margin:auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.collapse1 {
+	margin:auto;
+	border-collapse: collapse;
+	font-family: monospace;
+	margin: 10px;
 }
 
 body {

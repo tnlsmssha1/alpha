@@ -122,7 +122,7 @@ class App extends React.Component {
 			<button disabled={!this.state.disabled} onClick={event => this.btnStop_click(event)}>Stop</button>
 			<hr/>
 			<table id="surface"
-					className='collapse' 
+					className='collapse1' 
 					onMouseDown={event => event.preventDefault()}
 					onContextMenu={event => event.preventDefault()}>
 				<tbody>
