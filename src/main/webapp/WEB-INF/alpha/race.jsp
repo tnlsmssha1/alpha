@@ -161,7 +161,7 @@ class Race{
 	            tdAlpha.align = 'center';
 	            timeTd.align = 'center';
 
-	            tdNo.innerText = statTable.rows.length + 1; // 현재 행의 순서
+	            tdNo.innerText = statTable.rows.length + 1;
 	            tdAlpha.innerText = this.alpha.ch;
 	            tdAlpha.style.color = this.alpha.fg;
 	            tdAlpha.style.background = this.alpha.bg;

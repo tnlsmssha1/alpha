@@ -168,8 +168,6 @@ $(document).ready(function() {
 		<ol class="sub-menu">
 			<li class="sub-menu-item"><a target="content" href="/city/list">city</a></li>
 			<li class="sub-menu-item"><a target="content" href="/country/list">country</a></li>
-			<li class="sub-menu-item"><a target="content" href="/language/list">language</a></li>
-			<li class="sub-menu-item"><a target="content" href="/serch">serch</a></li>
 		</ol>
 	</li>
 	<sec:authorize access="isAnonymous()">
