@@ -68,27 +68,33 @@ class App extends React.Component {
 	}
 	
 	btnStop_click(e) {
-		
+		this.state.disabled=false;
+		this.forceUpdate();
 	}
 	
 	async pingpong(body) {
 		let isRight = true;
 		let head = body[body.length-1];
+		
 		for(;;) {
+			if(!this.state.disabled){
+				break;
+			}
 			if (isRight)
-				this.move(body, 2);
+				this.move(body, 1);
 			else
-				this.move(body, 4);
+				this.move(body, 2);
 				
 			await sleep(head.speed);
 			
-			if (head.column == 100)
+			if (head.column == 70||head.column > 70)
 				isRight = false
-			else if (head.column == 0)
+			else if (head.column == -30)
 				isRight = true
-			
+				
 		}
 	}
+	
 	
 	move(body, direction) {
 		for (let i=0; i<body.length-1; i++) {
@@ -99,16 +105,10 @@ class App extends React.Component {
 		let head = body[body.length-1];
 		
 		switch(direction) {
-		case 1:		// UP
-			head.setLine(--head.line);
-			break;
-		case 2:		// Right
+		case 1:		// Right
 			head.setColumn(++head.column);
 			break;	
-		case 3:		// DOWN
-			head.setLine(++head.line);		
-			break;
-		case 4:		// LEFT
+		case 2:		// LEFT
 			head.setColumn(--head.column);
 			break;
 		}

@@ -1,4 +1,15 @@
-
+h1{
+	text-align: center;
+}
+div{
+	text-align: center;
+}
+div+select{
+	display: flex;
+	margin:auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
 
 .collapse {
 	border-collapse: collapse;
@@ -10,7 +21,8 @@ body {
 }
 
 #surface {
-	position: relative;	
+	position: relative;
+	left: 375px;	
 }
 
 #surface td{

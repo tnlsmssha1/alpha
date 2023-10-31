@@ -61,6 +61,7 @@ class App extends React.Component {
 		this.move(this.state.surface[this.state.rowNum], 1)	// UP
 	}
 	
+	
 	btnRight_click(e) {
 		this.move(this.state.surface[this.state.rowNum], 2)	// Right
 	}
@@ -71,6 +72,24 @@ class App extends React.Component {
 	
 	btnLeft_click(e) {
 		this.move(this.state.surface[this.state.rowNum], 4)	// Left
+	}
+	
+	handlekeyDown=(e)=>{
+		console.log(e.key);
+		if(e.key=="ArrowUp"){
+			this.move(this.state.surface[this.state.rowNum], 1)
+			e.preventDefault()
+		}
+		if(e.key=="ArrowRight"){
+			this.move(this.state.surface[this.state.rowNum], 2)
+		}
+		if(e.key=="ArrowDown"){
+			this.move(this.state.surface[this.state.rowNum], 3)
+			e.preventDefault()
+		}
+		if(e.key=="ArrowLeft"){
+			this.move(this.state.surface[this.state.rowNum], 4)
+		}
 	}
 	
 	move(body, direction) {
@@ -101,10 +120,12 @@ class App extends React.Component {
 	render() {
 		return (
 			<>
+			<div>
 			<button onClick={event => this.btnLeft_click(event)}>Left</button>
 			<button onClick={event => this.btnRight_click(event)}>Right</button>
 			<button onClick={event => this.btnUp_click(event)}>Up</button>
 			<button onClick={event => this.btnDown_click(event)}>Down</button>
+			</div>
 			<select onChange={event => this.state.rowNum = event.target.value}>
 				{
 					this.state.surface.map((row, i) =>
@@ -112,11 +133,12 @@ class App extends React.Component {
 					)
 				}
 			</select>
-			<hr/>
 			<table id="surface"
 					className='collapse' 
 					onMouseDown={event => event.preventDefault()}
-					onContextMenu={event => event.preventDefault()}>
+					onContextMenu={event => event.preventDefault()}
+					onKeyDown={this.handlekeyDown}
+					tabIndex="0">
 				<tbody>
 				{
 					this.state.surface.map((row, k) => 
