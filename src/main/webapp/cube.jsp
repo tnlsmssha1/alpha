@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>cube4.jsp</title>
+<title>cube.jsp</title>
 <style type="text/css">
 h1{
 	text-align: center;
