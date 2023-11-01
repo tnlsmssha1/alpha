@@ -24,8 +24,8 @@ body{
 }
 
 #surface{
-	margin:auto;
 	position:relative;
+	left: 350px;
 }
 
 #surface td{

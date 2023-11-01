@@ -8,24 +8,33 @@
 <meta charset="UTF-8">
 <title>list.jsp</title>
 <style type="text/css">
+body{
+	width:1000px;
+}
 *{
-	padding: 10px;
+	padding: 5px;
 }
-#heading{
-	color: red;
+h1{
+	text-align: center;
 }
-td{
-	border: 1px solid red; 
+nav{
+	position:fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 150px;
+	background: white;
+	z-index: 2;
 }
-#heading, td{
-	text-decoration: overline;
+#search{
+	text-align: center;
+	margin: 15px 0px;
 }
-table td{
-	text-decoration: underline;	
-}
-
-tbody>tr:hover {
-	background: blue;
+table{
+	position:relative;
+	top: 200px;
+	margin: auto;
+	text-align: center;
 }
 </style>
 <script type="text/javascript">
@@ -72,9 +81,9 @@ window.onload=function(){
 </script>
 </head>
 <body>
-<h1 id="heading">1.Country List</h1>
-<hr>
-<form action="/country/list">
+<nav>
+<h1 id="heading">Country List</h1>
+<form id="search" action="/country/list">
 <select name="continent">
 	<c:choose>
 	<c:when test="${empty param.continent}">
@@ -96,11 +105,10 @@ window.onload=function(){
 	</c:forEach>
 </select>
 <select name="region">
-<!-- option은 javascript에서 ajax를 이용하여 만들었음 -->
 </select>
 <input type="submit" value="조회">
 </form>
-<hr>
+</nav>
 <table border="1">
 	<thead>
 		<tr>

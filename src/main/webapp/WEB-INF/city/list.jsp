@@ -6,10 +6,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>list3.jsp</title>
+<title>city.jsp</title>
 <style type="text/css">
+h1{
+	text-align: center;
+}
 form input {
 	margin-top: 10px;
+}
+fieldset{
+	display:inline-block;
+}
+form{
+	text-align:center;
+	margin: 15px 0px;
+}
+input:last-child{
+	position:relative;
+	top: -10px;
+	padding: 18px;
+}
+table{
+	margin: auto;
+	text-align: center;
 }
 </style>
 <script type="text/javascript">
@@ -25,12 +44,11 @@ window.onload = function() {
 </script>
 </head>
 <body>
-<h1>City List3</h1>
-<hr>
-<form action="/city/list">
+<h1>City List</h1>
+<form id="search" action="/city/list">
 <fieldset>
 	<legend>code</legend>
-	<input name="code" value="${param.code}"  type="search" list="codes">
+	<input id="code" name="code" value="${param.code}"  type="search" list="codes">
 	<datalist id="codes">
 	<c:forEach var="c" items="${codes}">
 		<option value="${c.code}">[${c.code}] ${c.name}</option>
@@ -44,7 +62,6 @@ window.onload = function() {
 </fieldset>
 <input type="submit" value="도시검색">
 </form>
-<hr>
 <table border="1">
 	<thead>
 		<tr>

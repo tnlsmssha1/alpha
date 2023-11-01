@@ -32,7 +32,6 @@ nav{
 	z-index: 1;
 }
 .menu-item{
-/* 	min-width: 150px; 아래 코드와 같은 기능을 한다. */
 	width: 150px;
 	flex-shrink: 0;
 }
@@ -48,7 +47,7 @@ nav{
 	transition: max-height 2s;
 }
 .menu-item:nth-last-child(2){
-	margin-left: auto;
+	margin-left: 10px;
 /* 	margin-right: 10px; */
 }
 .menu-title{
@@ -107,22 +106,6 @@ $(document).ready(function() {
 
 <nav>
 <ul class="menu">
-<!-- 	<li style="padding: 0px 20px;"> -->
-<!-- 	<a href=""> -->
-<%-- 		<section class="perspective"> --%>
-<!-- 			<article class="cube"> -->
-<!-- 				<div class="base">Home</div> -->
-<!-- 				<div class="base front"></div> -->
-<!-- 				<div class="base back"></div> -->
-<!-- 				<div class="base left"></div> -->
-<!-- 				<div class="base right"></div> -->
-<!-- 				<div class="base top"></div> -->
-<!-- 				<div class="base bottom"></div> -->
-<!-- 			</article> -->
-<%-- 		</section> --%>
-<!-- 	</a>	 -->
-<!-- 	</li> -->
-	
 	<li class="menu-item">
 		<div class="menu-title">Alpha</div>
 		<ol class="sub-menu">

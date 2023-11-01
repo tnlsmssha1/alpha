@@ -92,6 +92,12 @@ class App extends React.Component {
 		}
 	}
 	
+	onfocus(e){
+		console.log("focus...!")
+		this.state.rowNum = e.target.value
+		$('#surface').focus();
+	}
+	
 	move(body, direction) {
 		for (let i=0; i<body.length-1; i++) {
 			body[i].setColumn(body[i+1].column);
@@ -118,6 +124,10 @@ class App extends React.Component {
 	}
 	
 	render() {
+		setTimeout(()=>{
+			console.log("focus...")
+			$('#surface').focus();
+		},100)
 		return (
 			<>
 			<div>
@@ -126,7 +136,7 @@ class App extends React.Component {
 			<button onClick={event => this.btnUp_click(event)}>Up</button>
 			<button onClick={event => this.btnDown_click(event)}>Down</button>
 			</div>
-			<select onChange={event => this.state.rowNum = event.target.value}>
+			<select onChange={event => this.onfocus(event)}>
 				{
 					this.state.surface.map((row, i) =>
 						<option key={i}>{i}</option>

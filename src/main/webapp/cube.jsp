@@ -23,7 +23,7 @@ body{
 	display: inline-block;
 	
 	transform-style: preserve-3d;
- 	animation: rotate 7s infinite linear;
+  	animation: rotate 10s infinite linear; 
 	
 }
 .perspective2{
@@ -35,9 +35,11 @@ body{
 }
 .cube2{
  	display: inline-block;
-	
+	position:relative;
+	top: 50px;
+	left: 50px;
 	transform-style: preserve-3d;
-  	animation: rotate 3s infinite linear; 
+   	animation: rotate 6s infinite linear;  
 	
 }
 .base{
@@ -132,23 +134,23 @@ body{
 	}
 }
 
+
 </style>
 </head>
 <body>
 <h1>CUBE</h1>
 <section class="perspective">
 	<article class="cube">
-		<div class="base">
 			<article class="cube2">
-				<div class="base2">Base</div>
-				<div class="base2 front2">Front</div>
-				<div class="base2 back2">Back</div>
-				<div class="base2 left2">Left</div>
-				<div class="base2 right2">Right</div>
-				<div class="base2 top2">Top</div>
-				<div class="base2 bottom2">Bottom</div>
+				<div class="base2">김현민</div>
+				<div class="base2 front2"></div>
+				<div class="base2 back2"></div>
+				<div class="base2 left2"></div>
+				<div class="base2 right2"></div>
+				<div class="base2 top2"></div>
+				<div class="base2 bottom2"></div>
 			</article>
-		</div>
+		<div class="base"></div>
 		<div class="base front"></div>
 		<div class="base back"></div>
 		<div class="base left"></div>

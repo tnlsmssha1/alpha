@@ -11,7 +11,6 @@
 </head>
 <body>
 <h1>dept</h1>
-<hr>
 <section id="root"></section>
 </body>
 </html>

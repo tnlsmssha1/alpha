@@ -5,16 +5,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<style type="text/css">
+h1{
+	text-align: center;
+}
+#search{
+	text-align: center;
+	margin: 15px 0px;
+}
+table{
+	margin: auto;
+}
+</style>
 <title>list.jsp</title>
 </head>
 <body>
 <h1>Dept List</h1>
-<hr>
-<form action="/dept/list">
+<form id="search" action="/dept/list">
 	<input type="text" name="search">
 	<input type="submit" value="부서검색">
 </form>
-<hr>
 <table border="1" width="500">
 	<thead>
 		<tr>
@@ -33,5 +43,9 @@
 	</c:forEach>
 	</tbody>
 </table>
+<form id="search" action="/dept/list">
+	<input type="text" name="search">
+	<input type="submit" value="부서검색">
+</form>
 </body>
 </html>

@@ -34,9 +34,7 @@ class Insert extends React.Component{
 		return(
 			<>
 				<h1>부서 추가</h1>
-				<hr/>
 				<Link to="/rest/dept">목록으로 이동</Link>
-				<hr/>
 				<form onSubmit={event=>this.onSubmit(event)}>
 					<fieldset>
 						<legend>deptno</legend>

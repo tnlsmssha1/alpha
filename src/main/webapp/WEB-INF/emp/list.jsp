@@ -5,12 +5,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<style type="text/css">
+h1{
+	text-align: center;
+}
+#search{
+	text-align: center;
+	margin: 15px 0px;
+}
+table{
+	margin: auto;
+	text-align: center;
+}
+</style>
 <title>list.jsp</title>
 </head>
 <body>
 <h1>Emp List</h1>
-<hr>
-<form action="/emp/list">
+<form id="search" action="/emp/list">
 	<label>부서 선택</label>
 	<select name="deptno">
 			<c:choose>
@@ -35,7 +47,6 @@
 	<input type="text" name="search">
 	<input type="submit" value="직원검색">
 </form>
-<hr>
 <table border="1" width="800">
 	<thead>
 		<tr>
@@ -66,5 +77,30 @@
 	</c:forEach>
 	</tbody>
 </table>
+<form id="search" action="/emp/list">
+	<label>부서 선택</label>
+	<select name="deptno">
+			<c:choose>
+			<c:when test="${empty param.deptno}">
+				<option value="" selected="selected">전체</option>
+			</c:when>
+			<c:otherwise>
+				<option value="">전체</option>
+			</c:otherwise>
+			</c:choose>
+		<c:forEach var="dept" items="${depts}">
+			<c:choose>
+			<c:when test="${param.deptno eq dept.deptno}">
+				<option value="${dept.deptno}" selected="selected">${dept.deptno} ${dept.dname}</option>
+			</c:when>
+			<c:otherwise>
+				<option value="${dept.deptno}">${dept.deptno} ${dept.dname}</option>
+			</c:otherwise>
+			</c:choose>
+		</c:forEach>
+	</select>
+	<input type="text" name="search">
+	<input type="submit" value="직원검색">
+</form>
 </body>
 </html>

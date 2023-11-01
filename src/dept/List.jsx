@@ -28,7 +28,6 @@ class List extends React.Component{
 		return(
 			<>
 			<h1>부서 목록</h1>
-			<hr/>
 			<Link to="/rest/dept/insert">추가</Link>
 			<table border={1}>
 				<thead>
