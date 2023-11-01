@@ -23,20 +23,21 @@ body{
 	display: inline-block;
 	
 	transform-style: preserve-3d;
-	animation: rotate 7s infinite linear;
+ 	animation: rotate 7s infinite linear;
 	
 }
 .perspective2{
-	display: inline-block;
+ 	display: inline-block; 
 	margin: 100px 0px 0px 100px;
 	
-	perspective: 500px;
+	
+	perspective: 600px;
 }
 .cube2{
-	display: inline-block;
+ 	display: inline-block;
 	
 	transform-style: preserve-3d;
- 	animation: rotate 7s infinite linear;
+  	animation: rotate 3s infinite linear; 
 	
 }
 .base{
@@ -137,22 +138,23 @@ body{
 <h1>CUBE</h1>
 <section class="perspective">
 	<article class="cube">
-		<div class="base"></div>
+		<div class="base">
+			<article class="cube2">
+				<div class="base2">Base</div>
+				<div class="base2 front2">Front</div>
+				<div class="base2 back2">Back</div>
+				<div class="base2 left2">Left</div>
+				<div class="base2 right2">Right</div>
+				<div class="base2 top2">Top</div>
+				<div class="base2 bottom2">Bottom</div>
+			</article>
+		</div>
 		<div class="base front"></div>
 		<div class="base back"></div>
 		<div class="base left"></div>
 		<div class="base right"></div>
 		<div class="base top"></div>
 		<div class="base bottom"></div>
-		<article class="cube2">
-			<div class="base2">Base</div>
-			<div class="base2 front2">Front</div>
-			<div class="base2 back2">Back</div>
-			<div class="base2 left2">Left</div>
-			<div class="base2 right2">Right</div>
-			<div class="base2 top2">Top</div>
-			<div class="base2 bottom2">Bottom</div>
-		</article>
 	</article>
 </section>
 </body>
