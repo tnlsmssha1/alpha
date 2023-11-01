@@ -27,11 +27,12 @@ body {
 
 #surface {
 	position: relative;	
+	left: 370px;
 }
 
 #surface td{
 	
-	position: relative;
+	position: absolute;
 	transition: left 100ms, top 100ms, transform 2s;
 	
 }

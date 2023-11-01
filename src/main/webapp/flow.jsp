@@ -11,13 +11,11 @@
 </head>
 <body>
 <h1>flow</h1>
-<hr>
 <table class="collapse">
 	<tbody>
-		<tr><td style="color: red; background: blue">A</td></tr>
+		<tr><td style="color: white; background: white">A</td></tr>
 	</tbody>
 </table>
-<hr>
 <section id="root"></section>
 </body>
 </html>
