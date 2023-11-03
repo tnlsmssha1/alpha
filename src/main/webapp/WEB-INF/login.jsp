@@ -7,17 +7,28 @@
 <meta charset="UTF-8">
 <title>login.jsp</title>
 <style type="text/css">
+h1{
+	text-align: center;
+}
 section{
 	width: 50%;
 	margin: auto;
 }
-
+form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
 fieldset{
 	margin: 20px 0px;
+	border-radius: 30px;
+	width:280px;
 }
 
 input{
 	padding: 10px;
+	margin: 10px;
 }
 
 .error{
@@ -36,16 +47,11 @@ input{
     </c:if>
 	<form action="/login" method="post">
 		<fieldset>
-			<legend><label for="id">ID</label></legend>
-			<input id="id" name="username"/>
+			<legend><label for="id">ID/PASSWORD</label></legend>
+			<input id="id" name="username" placeholder="ID"/>
+			<input id="pw" type="password" name="password" placeholder="PASSWORD"/>
 		</fieldset>
-		<fieldset>
-			<legend><label for="pw">PASSWORD</label></legend>
-			<input id="pw" type="password" name="password"/>
-		</fieldset>
-		<fieldset>
 			<input type="submit" value="로그인">
-		</fieldset>
 	</form>
 </section>
 </body>
