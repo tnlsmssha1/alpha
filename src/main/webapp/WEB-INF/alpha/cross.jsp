@@ -18,11 +18,6 @@ section > table{
 select{
 	width: 100px;
 }
-#surface2, #surface3, #makeAlpha{
-	position: absolute;
- 	border-collapse: collapse;
- 	width: 160px;
-}
 #makeAlpha{
 	text-align: center;
 }
@@ -38,7 +33,9 @@ select{
 	left: 0px;
 }
 #surface{
-	margin: auto;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 	border-collapse: collapse;
 	font-family: monospace;
 	font-size: 120%;
@@ -155,7 +152,6 @@ window.onload= ()=>{
 <body>
 <h1 align="center">Alpha Maker</h1>
 <section>
-<form action="http://localhost:8080/alpha/cross2">
 <table id="makeAlpha" style="border: 1px solid black">
 	<thead>
 		<tr>
@@ -229,7 +225,6 @@ window.onload= ()=>{
 		</tr>
 	</tbody>
 </table>
-</form>
 
 <table id="surface3" border="1">
 	<thead>

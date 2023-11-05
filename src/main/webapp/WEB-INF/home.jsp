@@ -121,7 +121,7 @@ $(document).ready(function() {
 		<ol class="sub-menu">
 			<li class="sub-menu-item"><a target="content" href="/ani/fill">CURL</a></li>
 			<li class="sub-menu-item"><a target="content" href="/cube.jsp">CUBE</a></li>
-			<li class="sub-menu-item"><a target="content" href="/placeholder.jsp">placeholder</a></li>
+			<li class="sub-menu-item"><a target="content" href="/placeholder.jsp">PLACE HOLDER</a></li>
 		</ol>
 	</li>
 	
@@ -178,7 +178,7 @@ $(document).ready(function() {
 	</sec:authorize>
 </ul>
 </nav>
-<iframe src="/cube.jsp"
+<iframe 
 		name="content" 
 		width="100%"
 		scrolling="no"
