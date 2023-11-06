@@ -178,7 +178,7 @@ $(document).ready(function() {
 	</sec:authorize>
 </ul>
 </nav>
-<iframe 
+<iframe src="/cube.jsp"
 		name="content" 
 		width="100%"
 		scrolling="no"
