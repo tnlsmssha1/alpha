@@ -35,22 +35,4 @@ public class EmpController {
 		var depts = deptMapper.selectAll();
 		request.setAttribute("depts", depts);
 	}
-	
-	
-	@GetMapping("/list2")
-	void list2(Integer deptno, String search, HttpServletRequest request) {
-		System.out.println("deptno = " + deptno);
-		System.out.println("search = " + search);
-		
-		List<Emp> list = null;
-		if (deptno == null)
-			list = empMapper.selectAll();
-		else
-			list = empMapper.selectByDeptno(deptno);
-		
-		request.setAttribute("list", list);
-		
-		var depts = deptMapper.selectAll();
-		request.setAttribute("depts", depts);
-	}
 }

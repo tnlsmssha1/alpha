@@ -34,7 +34,7 @@ public class AlphaController {
 				alphas[i][j].setBg(Color.Black);
 			}
 		}
-		model.addAttribute("surface", alphas); //Model 검색해보기
+		model.addAttribute("surface", alphas);
 	}
 
 	@GetMapping("/race")
@@ -78,7 +78,7 @@ public class AlphaController {
 	}
 	
 	@GetMapping("/data")
-	@ResponseBody			// REST API
+	@ResponseBody
 	Alpha data() {
 		return new Alpha();
 	}

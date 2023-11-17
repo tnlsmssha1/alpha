@@ -40,7 +40,6 @@ public interface CountryMapper {
 			  and region=#{region}
 			""")
 	List<Country> selectAllByContinentAndRegion(@Param("continent") String continent, @Param("region") String region);
-	// 2개 이상의 검색 값이 들어가면 위 코드처럼 @Param()을 작성해줘야 하고 괄호안에는 각 변수에 해당하는 이름을 붙여준다.
 	
 	
 	
