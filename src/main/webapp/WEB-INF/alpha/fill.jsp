@@ -124,7 +124,6 @@ window.onload= () => {
 		<input id="setC" name="setcolumn" type="number" min="1" max="40" value="${param.setcolumn}">
 		<label for="setcount">Count:</label>
 		<input id="setcount" name="setcount" type="number" value="${param.setcount}">
-<!-- 		onchange 속성을 사용해서 수정 가능여부 확인 필요 -->
 		<button id="checkBtn" type="submit">제출</button>
 		<div id="parent_btn">
 			<button id="start" onclick="startBtn_click(event)">Start</button>
