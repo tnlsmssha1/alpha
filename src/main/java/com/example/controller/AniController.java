@@ -23,7 +23,6 @@ public class AniController {
 	
 	@GetMapping("/fill")
 	void fill(Model model) {
-		log.info("fill()...");
 		
 		Alpha[][] alphas = new Alpha[20][40];
 		for(var i=0; i<alphas.length; i++) {
