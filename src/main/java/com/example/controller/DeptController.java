@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 public class DeptController {
 	
 	@Autowired
-	DeptMapper mapper;	// DI(Dependency Injection) - 의존 주입
+	DeptMapper mapper;
 	
 	@GetMapping("/dept/list")
 	String list(HttpServletRequest request) {

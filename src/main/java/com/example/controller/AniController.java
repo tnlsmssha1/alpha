@@ -21,76 +21,19 @@ import lombok.extern.slf4j.Slf4j;
 public class AniController {
 	
 	
-	@GetMapping("/fill")
+	@GetMapping("/CURL")
 	void fill(Model model) {
 		
 		Alpha[][] alphas = new Alpha[20][40];
 		for(var i=0; i<alphas.length; i++) {
 			for( var j=0; j<alphas[i].length; j++) {
 				alphas[i][j] = new Alpha();
-//				alphas[i][j].setFg(Color.Black);
-//				alphas[i][j].setBg(Color.Black);
-			}
-		}
-		model.addAttribute("surface", alphas); //Model 검색해보기
-	}
-	
-	
-	@GetMapping("/race")
-	void race(Model model) {
-		
-		var alphas = new ArrayList<ArrayList<Alpha>>();
-		for(var i=0; i<20; i++) {
-			alphas.add(new ArrayList<Alpha>());
-			for (var j=0; j<40; j++) {
-				alphas.get(i).add(new Alpha());
 			}
 		}
 		model.addAttribute("surface", alphas);
 	}
-	@GetMapping("/race3")
-	void race3(Model model) {
-		
-		var alphas = new ArrayList<ArrayList<Alpha>>();
-		for(var i=0; i<20; i++) {
-			alphas.add(new ArrayList<Alpha>());
-			for (var j=0; j<40; j++) {
-				alphas.get(i).add(new Alpha());
-			}
-		}
-		model.addAttribute("surface", alphas);
-	}
-	
-	@GetMapping("/cross")
-	void cross(Model model) {
-		var alphas = new HashMap<Integer, ArrayList<Alpha>>();
-		
-		for(var i=0; i<20; i++) {
-			alphas.put(i, new ArrayList<Alpha>());
-			for(var j=0; j<40; j++) {
-				alphas.get(i).add(new Alpha());
-			}
-		}
-		model.addAttribute("surface", alphas);
-	}
-	
-	@GetMapping("/zigzag")
-	void zigzag(Model model) {
-		var alphas = new HashSet<ArrayList<Alpha>>();
-		for( var i=0; i<20; i++ ) {
-			var list = new ArrayList<Alpha>();
-			for(var j=0; j<40; j++) {
-				list.add(new Alpha());
-			}
-			
-			alphas.add(list);
-		}
-		model.addAttribute("surface", alphas);
-	}
-	
-	
 	@GetMapping("/data")
-	@ResponseBody			// REST API
+	@ResponseBody
 	Alpha data() {
 		return new Alpha();
 	}

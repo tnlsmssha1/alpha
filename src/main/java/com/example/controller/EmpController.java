@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpServletRequest;
 public class EmpController {
 	
 	@Autowired
-	EmpMapper empMapper;	// DI(Dependency Injection) - 의존 주입
+	EmpMapper empMapper;
 	
 	@Autowired
 	DeptMapper deptMapper;

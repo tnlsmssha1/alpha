@@ -21,28 +21,10 @@ import lombok.extern.slf4j.Slf4j;
 public class CityController {
 	
 	@Autowired
-	CityMapper mapper;	// DI - 의존 주입
+	CityMapper mapper;
 
-//	static Logger log = LoggerFactory.getLogger(CityController.class);
-//	@GetMapping("/list")
-	String list2(String code, Model model) {	// IoC (Inverse Of Control) - 제어의 역전
-
-		List<City> list = null; 
-		if (code==null || code.trim().equals(""))
-			list = mapper.selectAll();
-		else
-			list = mapper.selectAllByCode(code);
-		
-		model.addAttribute("list", list);
-		
-		var codes = mapper.selectCountryCodes();
-		model.addAttribute("codes", codes);
-		
-		return "city/list3";
-	}
-	
 	@GetMapping("/list")
-	String list(String code, Long population, Model model) {	// IoC (Inverse Of Control) - 제어의 역전
+	String list(String code, Long population, Model model) {
 
 		var list = mapper.searchAll(code, population);
 		

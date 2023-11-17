@@ -109,17 +109,17 @@ $(document).ready(function() {
 	<li class="menu-item">
 		<div class="menu-title">Alpha</div>
 		<ol class="sub-menu">
-			<li class="sub-menu-item"><a target="content" href="/alpha/fill">Table Maker</a></li>
-			<li class="sub-menu-item"><a target="content" href="/alpha/cross">Alpha Maker</a></li>
+			<li class="sub-menu-item"><a target="content" href="/alpha/Table Maker">Table Maker</a></li>
+			<li class="sub-menu-item"><a target="content" href="/alpha/Alpha Maker">Alpha Maker</a></li>
 			<li class="sub-menu-item"><a target="content" href="/alpha/race">Race</a></li>
-			<li class="sub-menu-item"><a target="content" href="/alpha/zigzag">Worms</a></li>
+			<li class="sub-menu-item"><a target="content" href="/alpha/Worms">Worms</a></li>
 		</ol>
 	</li>
 	
 	<li class="menu-item">
 		<div class="menu-title">Animation</div>
 		<ol class="sub-menu">
-			<li class="sub-menu-item"><a target="content" href="/ani/fill">CURL</a></li>
+			<li class="sub-menu-item"><a target="content" href="/ani/CURL">CURL</a></li>
 			<li class="sub-menu-item"><a target="content" href="/cube.jsp">CUBE</a></li>
 			<li class="sub-menu-item"><a target="content" href="/placeholder.jsp">PLACE HOLDER</a></li>
 		</ol>

@@ -42,8 +42,6 @@ public class CountryController {
 		var continents=mapper.selectContinents();
 		model.addAttribute("continents",continents);
 		
-//		var regions=mapper.selectRegions(continent);
-//		model.addAttribute("regions",regions);
 	}
 	
 	@GetMapping("/regions")

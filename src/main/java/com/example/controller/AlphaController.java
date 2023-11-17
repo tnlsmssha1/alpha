@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 public class AlphaController {
 	
 	
-	@GetMapping("/fill")
+	@GetMapping("/Table Maker")
 	void fill(Model model, @RequestParam(required = false, defaultValue = "1") int setline,
 						   @RequestParam(required = false, defaultValue = "1") int setcolumn) {
 		System.out.println(setline+"/"+setcolumn);
@@ -50,7 +50,7 @@ public class AlphaController {
 		model.addAttribute("surface", alphas);
 	}
 	
-	@GetMapping("/cross")
+	@GetMapping("/Alpha Maker")
 	void cross(Model model) {
 		var alphas = new HashMap<Integer, ArrayList<Alpha>>();
 		
@@ -63,7 +63,7 @@ public class AlphaController {
 		model.addAttribute("surface", alphas);
 	}
 	
-	@GetMapping("/zigzag")
+	@GetMapping("/Worms")
 	void zigzag(Model model) {
 		var alphas = new HashSet<ArrayList<Alpha>>();
 		for( var i=0; i<20; i++ ) {
